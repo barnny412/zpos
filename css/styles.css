@@ -1,0 +1,2219 @@
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    position: fixed; /* Fix the body */
+    width: 100%; /* Make sure it takes the full width */
+    overflow-y: auto; /* Enable vertical scrollbar if content exceeds the viewport */
+}
+
+.wrapper{
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to bottom right, #0f0e20, #1b0e2e);
+    color: #fff;
+    padding: 10px;
+    font-size: 24px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.tab-nav-buttons button {
+    background-color: transparent;
+    border: 1px solid aquamarine;
+    border-radius: 5px;
+    padding: 8px 10px;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .tab-nav-buttons button:hover {
+    background-color: #ddd;
+	border-radius: 5px;
+    color: black;
+  }
+
+/* Add margin between logo and pos-name div */
+.header-left .logo {
+    margin-right: 10px;
+    margin-left: 20px;
+}
+
+.logo img {
+    width: 100px; /* Adjust the width as needed */
+    height: auto;
+    margin-right: 10px; /* Add some spacing to the right of the logo */
+}
+
+.pos-name{
+    margin-right: 20px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Add margin between user and logout div */
+.header-right .user {
+    margin-right: 10px;
+    margin-left: 30px;
+}
+
+/* Modern styling for the logout button */
+.logout button {
+    background-color: #ff6f69;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.logout button:hover {
+    background-color: #ff4040;
+}
+
+.container {
+    display: none;
+    height: calc(100% - 60px); /* Subtract header height (2x10px padding) */
+    padding: 0 2px 20px; /* Add left and right padding, and 20px bottom padding */
+}
+
+.container.active{
+    display: flex;
+}
+
+.left {
+    flex: 2; /* Left div takes twice the space of the right div */
+    background-color: #f1f1f1;
+    padding: 3px 0px 4px 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.purchase-left {
+    flex: 2; /* Left div takes twice the space of the right div */
+    background-color: #f1f1f1;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+    margin-right: 20px;
+    display: flex;
+}
+
+.search-bar input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+.search-bar button:hover {
+    background-color: #0bdf8db6;
+}
+
+.weighed-products-head{
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+.weighed-products{
+    display: flex;
+    flex-direction: row;
+    padding: 15px 10px;
+}
+
+.dropdown {
+    margin-right: 20px;
+}
+
+#product-dropdown {
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    width: 150px; /* Adjust the width as needed */
+}
+
+#product-dropdown2 {
+    padding: 4px;
+    font-size: 18px;
+    border-radius: 5px;
+    width: 150px; /* Adjust the width as needed */
+}
+
+.weight-input {
+    margin-right: 20px;
+}
+
+#weight {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 120px;
+}
+
+#cost-price {
+    padding: 8px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 135px;
+}
+
+#weight2 {
+    padding: 8px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 135px;
+}
+
+#add-button, #add-button2 {
+    background-color: #ff6f69;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+    width: 150px; /* Adjust the width as needed */
+    height: 40px;
+}
+
+#add-button:hover {
+    background-color: #ff4040;
+}
+
+.submitBtn{
+    background-color: #45a049;;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+    width: 100%; /* Adjust the width as needed */
+    height: 50px;
+}
+
+.submit-expenses {
+    background-color: #45a049;;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+    width: 100%; /* Adjust the width as needed */
+    height: 50px;
+}
+
+.submit-product {
+    background-color: #45a049;;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+    width: 600px; /* Adjust the width as needed */
+    height: 50px;
+}
+
+.submitBtn:hover{
+    background-color: #4b8d4edc;;
+}
+
+.add-small{
+    background-color: #45a049;;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+    width: 100%; /* Adjust the width as needed */
+    height: 40px;
+}
+
+.add-small:hover{
+    background-color: #4b8d4edc;;
+}
+
+.expense-container{
+    width: 600px;
+}
+
+.content {
+    flex: 1; /* Content div takes the remaining space */
+    display: flex;
+    flex-direction: row;
+}
+
+.bottom-menu {
+    width: 100%; /* Set width to 100% */
+    height: 120px; /* Set height to 120px */
+    display: flex;
+    justify-content: space-between; /* Add space between the buttons */
+    align-items: center; /* Center the content vertically */
+    padding: 2px; /* Add padding around the buttons */
+    margin-bottom: 18px;
+  }
+  
+  .menu-button,
+  .purchase-menu-button {
+    flex: 1; /* Each button takes equal space horizontally */
+    height: 100%; /* Make the buttons fill the height of the bottom menu */
+    background-color: #3a4a5cab;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 1px; /* Add margin around the buttons */
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+  }
+  
+  .menu-button:hover, 
+  .purchase-menu-button:hover {
+    background-color: #0bdf8d;
+  }
+
+  .menu-button:active,
+  .purchase-menu-button:active  {
+    background-color: #137c54;
+  }
+
+  
+  .products {
+    display: none;
+    overflow-y: auto; /* Enable vertical scroll for overflowing content */
+    height: 530px;
+    width: 100% ;
+}
+
+.products.active {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1px;
+}
+
+.purchase-products{
+    display: none;
+    overflow-y: auto; /* Enable vertical scroll for overflowing content */
+    height: 530px;
+    width: 100% ;
+}
+.purchase-products.active {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1px;
+}
+
+/* Modern styling for the product card */
+/* CSS for the product card */
+.product-card  {
+    background: linear-gradient(to bottom right, #0f0e20, #1b0e2e);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin: 4px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 120px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .purchase-product-card {
+    background: linear-gradient(to bottom right, #0f0e20, #1b0e2e);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin: 4px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 120px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .packet-content{
+    display: none;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05);
+  }
+
+  .purchase-product-card:hover {
+    transform: scale(1.05);
+  }
+
+.product-name {
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+.product-id{
+    display: none;
+}
+
+.product-price {
+    font-size: 20px;
+    color: #ffffffbd;
+    border-top: 1px solid #aca6a6; /* Add top border to the product price */
+    width: 100%;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.right,.right-purchases {
+    flex: 1.2; 
+    display: flex;
+    flex-direction: column; /* Flex direction set to column */
+    background-color: #ccc;
+    padding: 0 5px 5px; /* Remove top padding, keep left and right padding */
+    margin-bottom: 8px;
+}
+
+/* Modern styling for the logout button */
+.logout button {
+    background-color: #ff6f69;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.logout button:hover {
+    background-color: #ff4040;
+}
+
+.quantity-btn{
+    color: black;
+    padding: 3px 20px;
+    margin: 7px;
+    border: none;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.quantity-btn:hover{
+    transform: scale(1.05)
+}
+
+.quantity-btn2{
+    color: black;
+    padding: 3px 20px;
+    margin: 7px;
+    border: none;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.quantity-btn2:hover{
+    transform: scale(1.05)
+}
+
+/* Style for the footer */
+footer {
+    background: linear-gradient(to bottom right, #0f0e20, #1b0e2e);
+    color: #fff;
+    font-size: 12px;
+    font-weight: lighter;
+    text-align: center;
+    padding-bottom: 0px;
+    width: 100%;
+    height: 27px;
+    /* Stick the footer to the bottom */
+    margin-top: auto;
+    margin-right: 20px;
+    position: absolute;
+    bottom: 0;
+}
+
+/* Adjust cart and cart-info flex values to make the cart bigger */
+.right-header {
+    margin-bottom: 0; /* Reduce margin to make the right header smaller */
+}
+
+.cart {
+    flex: 3; /* Cart takes up more space */
+    background-color: #fff;
+    padding: 2px;
+    
+    overflow-y: auto; /* Enable vertical scrollbar if content exceeds the height */
+}
+
+.cart table {
+    width: 100%; /* Set the table width to 100% */
+    border-collapse: collapse;
+}
+
+.cart th,
+.cart td {
+    padding: 12px; /* Adjust the padding for table cells */
+    text-align: left;
+}
+
+/* Adjust the width of table headers */
+/* Increase the width of the product table header */
+.cart th.product-header {
+    width: 60%; /* Adjust width for Product column */
+}
+
+/* Decrease the width of the Qty table header */
+.cart th.qty-header {
+    width: 5%; /* Adjust width for Qty column */
+}
+
+/* Adjust the width of Price table header */
+.cart th.price-header {
+    width: 15%; /* Adjust width for Price column */
+}
+
+/* Adjust the width of Total table header */
+.cart th.total-header {
+    width: 15%; /* Adjust width for Total column */
+}
+
+/* Adjust the width of Action table header */
+.cart th.action-header {
+    width: 5%; /* Adjust width for Action column */
+}
+
+.cart th:nth-child(6) {
+    width: 5%; /* Set width for Action column */
+}
+
+/* Styling for the last row in the cart */
+.cart tr:last-child td {
+    border-bottom: none;
+}
+
+/* Styling for the delete button in the cart table */
+.cart .delete-btn {
+    background-color: #ff6f69;
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.cart .delete-btn:hover {
+    background-color: #ff4040;
+}
+
+.purchase-cart {
+    flex: 3; /* Cart takes up more space */
+    background-color: #fff;
+    padding: 2px;
+    
+    overflow-y: auto; /* Enable vertical scrollbar if content exceeds the height */
+}
+
+.purchase-cart table {
+    width: 100%; /* Set the table width to 100% */
+    border-collapse: collapse;
+}
+
+.purchase-cart th,
+.purchase-cart td {
+    padding: 12px; /* Adjust the padding for table cells */
+    text-align: left;
+}
+
+/* Adjust the width of table headers */
+/* Increase the width of the product table header */
+.purchase-cart th.product-header {
+    width: 200px; /* Adjust width for Product column */
+}
+
+/* Decrease the width of the Qty table header */
+.purchase-cart th.qty-header {
+    width: 10px; /* Adjust width for Qty column */
+}
+
+/* Adjust the width of Price table header */
+.purchase-cart th.price-header {
+    width: 15%; /* Adjust width for Price column */
+}
+
+/* Adjust the width of Total table header */
+.purchase-cart th.total-header {
+    width: 15%; /* Adjust width for Total column */
+}
+
+/* Adjust the width of Action table header */
+.purchase-cart th.action-header {
+    width: 5%; /* Adjust width for Action column */
+}
+
+.purchase-cart th:nth-child(6) {
+    width: 5%; /* Set width for Action column */
+}
+
+/* Styling for the last row in the cart */
+.purchase-cart tr:last-child td {
+    border-bottom: none;
+}
+
+/* Styling for the delete button in the cart table */
+.purchase-cart .delete-btn2 {
+    background-color: #ff6f69;
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.purchase-cart .delete-btn2:hover {
+    background-color: #ff4040;
+}
+
+/* Modern styling for the delete button */
+.delete-btn {
+    background-color: #ff6f69;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.delete-btn:hover {
+    background-color: #ff4040;
+}
+
+/* Modern styling for the delete button */
+.delete-btn2 {
+    background-color: #ff6f69;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.delete-btn2:hover {
+    background-color: #ff4040;
+}
+
+.process-payment{
+    width: 50%;
+}
+
+/* Styling for the Process Payment button */
+.process-payment button {
+    width: 100%; /* Make the button full width */
+    background-color: #ff6f69;
+    color: #fff;
+    border: none;
+    padding: 34px; /* Increase padding to make the Process Payment button taller */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+    margin-top: 6px; /* Reduce margin to match the reduced right header size */
+    margin-left: 2px;
+}
+
+.process-payment button:hover {
+    background-color: #ff4040; /* Set the same hover color as the Logout button */
+}
+
+/* Styling for the cart info section */
+.cart-info {
+    background-color: #f1f1f1;
+    padding: 15px; /* Reduce padding to make the cart info div a bit shorter */
+    border-radius: 5px;
+    height: 56px; /* Reduce the minimum height of the cart info div */
+    width: 50%;
+    margin: 6px 2px;
+}
+
+/* Styling for the cart table headers */
+.cart th {
+    background-color: #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.purchase-cart th {
+    background-color: #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+/* Increase the width of the product table header */
+.cart th.product-header {
+    width: 200px;
+}
+
+/* Decrease the width of the Qty table header */
+.cart th.qty-header {
+    width: 10px;
+}
+
+/* Styling for the delete button in the cart table */
+.cart .delete-btn {
+    background-color: #ff6f69;
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.cart .delete-btn:hover {
+    background-color: #ff4040;
+}
+
+.cart-total {
+    font-size: 24px; /* Increase font size for the total */
+    font-weight: bold;
+}
+
+.cart-total2 {
+    font-size: 24px; /* Increase font size for the total */
+    font-weight: bold;
+}
+
+.bottom-right{
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    width: 100%;
+    min-height: 105px;
+}
+
+/* Styling for the payment window */
+.payment-window {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.payment-window h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.payment-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.payment-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.payment-btn {
+    background-color: #0bdf8d;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+    width: 100%;
+}
+
+.payment-btn:hover {
+    background-color: #09c17d;
+}
+
+.custom-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+    margin: 0 0 10px;
+}
+
+.modal-content input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.modal-content button {
+    background-color: #0bdf8d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.2s ease;
+}
+
+.modal-content button:hover {
+    background-color: #09c17d;
+}
+
+
+.custom-alert {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.alert-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.alert-content h2 {
+    margin: 0 0 10px;
+}
+
+.alert-content button {
+    background-color: #0bdf8d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.alert-content button:hover {
+    background-color: #09c17d;
+}  
+
+/* Styling for the table rows in the cart */
+.cart td {
+    border-bottom: 1px solid #ddd;
+    padding: 0px 0px 0px 0px;
+    text-align: left;
+}
+
+/* Styling for the last row in the cart */
+.cart tr:last-child td {
+    border-bottom: none;
+}
+
+/* Styling for the payment window */
+.payment-window {
+    display: none; /* Hide the payment window by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* Set a high z-index to make sure the payment window is on top */
+}
+
+/* Styling for the alert */
+.alert {
+    display: none; /* Hide the alert by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* Set a high z-index to make sure the alert is on top */
+}
+
+.custom-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container{
+    display: flex;
+    flex-direction: row;
+}
+
+/* Add New Category Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background: #ff4040;
+}
+
+/* Style for the "+" button */
+
+
+/*Success Modal CSS*/
+/* Add CSS for your modal here */
+#successModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #c23333;
+    width: 50%;
+}
+
+#closeModal {
+    color: #888;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* --------------------------------------------- */
+
+.modal-content {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+    margin: 0 0 10px;
+}
+
+.modal-content p, span {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.modal-content input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+#supplierName,
+#categoryName{
+    width: 420px;
+}
+
+.modal-content button {
+    background-color: #0f0e20;
+    color: #fff;
+    border: none;
+    margin: 5px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.modal-content button:hover {
+    background-color: #09c17d;
+}
+
+
+.custom-alert {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.alert-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.alert-content h2 {
+    margin: 0 0 10px;
+}
+
+.alert-content p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.alert-content button {
+    background-color: #0bdf8d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.2s ease;
+}
+
+.alert-content button:hover {
+    background-color: #09c17d;
+}
+
+/* Styling for the decrease and increase buttons in the cart table */
+.cart .quantity {
+    display: flex;
+    align-items: center;
+}
+
+.cart .decrease-btn,
+.cart .increase-btn {
+    background-color: #35b8b1;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+    margin: 0 5px; /* Add some margin between the buttons */
+}
+
+.cart .decrease-btn:hover,
+.cart .increase-btn:hover {
+    background-color: #aaa;
+}
+
+.cart .quantity-input {
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+    font-size: 14px;
+    text-align: center;
+    width: 40px; /* Set a fixed width for the input */
+}
+
+.purchase-cart .quantity-input {
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+    font-size: 14px;
+    text-align: center;
+    width: 40px; /* Set a fixed width for the input */
+}
+
+
+/*--- Purchases Tab CSS ---*/
+.right-top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-row label {
+    width: 150px;
+    margin-right: 10px;
+}
+
+.form-row input {
+    flex: 1;
+}
+
+/*--- End of Purchases Tab CSS ---*/
+
+/*--- Add New Product Tab CSS ---*/
+
+.main-content{
+    display: flex;
+    padding-left: 20px;
+}
+
+.new-product-container{
+    width: 400px;
+    
+}
+.product-section{
+    display: flex;
+    flex-direction: row;
+}
+
+.product_name{
+    margin-right: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#ProductName,
+#Description,
+#reOrderLevel{
+    height: 28px;
+    width: 590px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+}
+
+#expense_category {
+    width: 612px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+}
+
+.group {
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+}
+
+.group select{
+    width: 100%;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+select {
+    appearance: none;
+    padding-right: 30px;
+    background: url("dropdown-arrow.svg") no-repeat right center;
+    background-size: 20px;
+}
+textarea {
+    resize: vertical;
+}
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/*--- End of Add New Product Tab CSS ---*/
+
+.denomination-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+label {
+    display: inline-block;
+    width: 120px;
+    font-weight: bold;
+}
+
+input[type="number"] {
+    width: 100px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="date"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.expense-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.expense-container h2 {
+    text-align:left;
+    font-size: 16px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 14px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 70%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+}
+
+#cash-amount-input{
+    height: 35px;
+    width: 80%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+}
+
+#expense_amount{
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+}
+
+#expense_category {
+    width: 612px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+}
+
+#Quantity {
+    width: 580px;
+    height:18px;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+}
+
+#categoryID {
+    width: 600px;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+}
+
+#supplierID {
+    width: 600px;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+}
+
+#Price, 
+#WholesalePrice {
+    width: 274px;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+h2 {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+/* The Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Close button */
+.close-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    background-color: #ddd;
+}
+
+/* Style the success message */
+#successMessage {
+    color: green;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.validation-error {
+    border: 1px solid red;
+}
+
+
+
+/* Media Queries */
+
+/* Additional styling for responsiveness */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left, .right {
+        flex: 1;
+    }
+
+
+    .purchase-left{
+        flex: 1;
+    }
+
+    .right {
+        margin-top: 20px;
+    }
+
+    /* Additional styling for the Process Payment button on smaller screens */
+    .process-payment button {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Round Borders on smaller screens 
+@media (max-width: 1600px) {
+    .header {
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+    }
+    
+    footer {
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+}
+
+*/
+
+/* Additional styling for smaller viewports */
+@media (max-width: 1700px) {
+    .bottom-menu {
+        height: 40px;
+    }
+
+    .products {
+        height: 500px;
+    }
+}
+
+/* Additional styling for full-screen viewports */
+@media (min-width: 100vw) {
+    .bottom-menu {
+        height: 95px;
+    }
+
+    .products {
+        height: 470px;
+    }
+
+    .purchase-products {
+        height: 320px;
+    }
+}
+
+/* Additional styling for touch screen users */
+@media (hover: none) {
+    .cart .decrease-btn,
+    .cart .increase-btn,
+    .quantity-input {
+        font-size: 16px;
+        padding: 10px 16px;
+    }
+}
+
+@media screen and (max-width: 1280px) and (max-height: 800px) {
+    .products {
+        height: 445px; /* Adjust as needed */
+    }
+    
+    .purchase-products {
+        height: 445px; /* Adjust as needed */
+    }
+}
+
+@media screen and (max-width: 1280px) and (max-height: 800px) {
+    .products {
+        height: 445px; /* Adjust as needed */
+    }
+    
+    .purchase-products {
+        height: 445px; /* Adjust as needed */
+    }
+}
+
+@media screen and (min-width: 1280px) and (min-height: 800px) {
+    .products {
+        height: 530px; /* Adjust as needed */
+    }
+    
+    .purchase-products {
+        height: 530px; /* Adjust as needed */
+    }
+}
+
+@media screen and (min-width: 1280px) and (min-height: 875px) {
+    .products {
+        height: 625px; /* Adjust as needed */
+    }
+    
+    .purchase-products {
+        height: 625px; /* Adjust as needed */
+    }
+}
+
+/* Add this media query to target screens with a width of 1238px and height of 676.77px */
+@media screen and (max-width: 1238.89px) and (max-height: 676.77px) {
+    /* Reduce the height of the products container */
+    .products {
+        max-height: 336px; /* Adjust as needed */
+    }
+    
+    .purchase-products {
+        max-height: 336x; /* Adjust as needed */
+    }
+
+    .bottom-menu{
+        margin-bottom: 1px;
+    }
+
+    /* Reduce the size of buttons */
+    .btn {
+        font-size: 12px; /* Adjust as needed */
+        padding: 5px 10px; /* Adjust padding as needed */
+    }
+
+    /* Reduce the size of product cards */
+    .product-card {
+        width: 90px; /* Adjust width as needed */
+        height: 80px; /* Adjust height as needed */
+    }
+
+    .purchase-product-card {
+        width: 90px; /* Adjust width as needed */
+        height: 80px; /* Adjust height as needed */
+    }
+
+    /* Reduce font sizes for product names and prices */
+    .product-name,
+    .product-price {
+        font-size: 12px; /* Adjust as needed */
+    }
+
+    /* Reduce font size for cart total */
+    .cart-total {
+        font-size: 14px; /* Adjust as needed */
+    }
+
+    /* Reduce the size of menu buttons */
+    .menu-button {
+        font-size: 12px; /* Adjust as needed */
+        padding: 5px 5px; /* Adjust padding as needed */
+    }
+
+    .purchase-menu-button {
+        font-size: 12px; /* Adjust as needed */
+        padding: 5px 5px; /* Adjust padding as needed */
+    }
+
+    /* Reduce font size for receipt content */
+    .receipt-content {
+        font-size: 12px; /* Adjust as needed */
+    }
+    .header {
+        display: flex;
+        justify-content: space-between;
+        background: linear-gradient(to bottom right, #0f0e20, #1b0e2e);
+        color: #fff;
+        padding: 5px;
+        font-size: 16px;
+    }
+    
+    /* Add margin between logo and pos-name div */
+    .header-left .logo {
+        margin-right: 10px;
+        margin-left: 20px;
+    }
+    
+    .logo img {
+        width: 100px; /* Adjust the width as needed */
+        height: auto;
+        margin-right: 10px; /* Add some spacing to the right of the logo */
+    }
+    
+    /* Modern styling for the logout button */
+    .logout button {
+        padding: 10px 30px;
+        font-size: 12px;
+    }
+    
+    .logout button:hover {
+        background-color: #ff4040;
+    }
+    
+    .search-bar input[type="text"] {
+        font-size: 14px;
+    }
+
+    #product-dropdown {
+        padding: 5px;
+        font-size: 14px;
+    }
+    
+    .weight-input {
+        margin-right: 20px;
+    }
+    
+    #weight {
+        font-size: 12px;
+    }
+    
+    #add-button {
+        font-size: 12px;
+    }
+
+    .process-payment button {
+        padding: 36x; /* Increase padding to make the Process Payment button taller */
+        font-size: 18px;
+        margin-top: 12px; /* Reduce margin to match the reduced right header size */
+        margin-left: 2px;
+    }
+    
+    .left{
+        flex: 1.4;
+    }
+}
+
+/* Add this media query to target screens with a width of 1280px and height of 875px */
+@media screen and (max-width: 1260px) and (max-height: 875px) {
+    /* Reduce the height of the products container */
+    .products {
+        max-height: 636px; /* Adjust as needed */
+    }
+    
+    .purchase-products {
+        max-height: 636px; /* Adjust as needed */
+    }
+}    
+
+
+/* Media Query for mobile in Landscape */
+@media screen and (min-width: 851px) and (max-height: 393px) {
+
+    body, html {
+        font-size: 12px;
+    }
+    .bottom-menu {
+        height: 35px;
+        margin-bottom: 1px;
+    }
+
+    .products {
+        height: 162px;
+    }
+
+    .purchase-products {
+        height: 162px;
+    }
+    .product-card {
+        width: 70px; /* Adjust width as needed */
+        height: 70px; /* Adjust height as needed */
+        padding: 14px;
+    }
+
+    .product-name{
+        font-weight: lighter;
+    }
+
+    .weighed-products{
+        padding: 0px 0px;
+    }
+
+    .search-bar input[type="text"] {
+        font-size: 12px;
+    }
+
+    #add-button {
+        width: 60px;
+        height: 32px;
+    }
+
+    .tab-nav-buttons button {
+        padding: 2px 2px;
+    }
+
+    .header{
+        font-size: 12px;
+        padding: 3px;
+    }
+
+    #product-dropdown {
+        width: 100px;
+    }
+
+    #weight {
+        width: 70px;
+    }
+
+    .right-header{
+        display: none;
+    }
+
+    .cart{
+        padding: 0px;
+    }
+    .cart th{
+        padding: 7px;
+    }
+
+    .cart .quantity-input {
+        padding: 2px 0px;
+        width: 20px;
+    }
+
+    .cart .delete-btn {
+        padding: 4px 6px;
+        font-size: 12px;
+    }
+
+    .process-payment button {
+        padding: 16px;
+        font-size: 14px;
+        margin-top: 7px;
+        margin-left: 2px;
+    }
+
+    .cart-info {
+        background-color: #f1f1f1;
+        padding: 0px;
+        border-radius: 5px;
+        min-height: 50px;
+        margin: 4px 2px;
+    }
+
+    .container {
+        height: calc(100% - 49px);
+    }
+
+}
+
+/* Media Query for mobile Phones E.g Iphone 7, Infinix Hot8, Pixel 5 */
+@media screen and (max-width: 393px) and (max-height: 851px) {
+
+    body, html {
+        font-size: 12px;
+    }
+
+    .new-product-container {
+        margin: 5px;
+    }
+    
+    .search-bar input[type="text"] {
+        width: 200px;
+    }
+
+    #ProductName{
+        width: 323px;
+    }
+
+    #WholesalePrice,
+    #Price{
+        width: 140px;
+    }
+
+    .expense-container {
+        padding: 5px;
+        
+    }
+
+    #categoryID, 
+    #supplierID {
+        width: 276px;
+    }
+
+    .submit-product {
+        width: 336px;  
+    }
+
+    #Quantity {
+        width: 312px;
+    }
+   
+    #Description,
+    #reOrderLevel{
+        width: 323px;
+    }
+
+    .group {
+        width: 600px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .bottom-menu {
+        height: 35px;
+        margin-bottom: 1px;
+    }
+
+    .main-content {
+        padding-left: 0px;
+    }
+
+    .search-bar {
+        margin-bottom: 5px;
+    }
+
+    .menu-button, .purchase-menu-button{
+        padding: 0px;
+        margin: 2px;
+        font-size: 12px;
+        font-weight: lighter;
+    }
+
+    .right {
+        margin-top: 0px;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .products {
+        height: 258px;
+    }
+
+    .products.active {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .purchase-products.active {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .purchase-products {
+        height: 255px;
+    }
+    .product-card {
+        height: 65px; /* Adjust height as needed */
+        padding: 14px;
+    }
+
+    .purchase-product-card {
+        height: 65px; /* Adjust height as needed */
+        padding: 14px;
+    }
+
+    .product-name{
+        font-weight: lighter;
+        font-size: 12px;
+    }
+
+    .product-price {
+        font-size: 12px;
+    }
+
+    .weighed-products{
+        padding: 0px 0px;
+    }
+
+    .search-bar input[type="text"] {
+        font-size: 12px;
+         height: 10px;
+    }
+    
+    #cost-price {
+        padding: 8px;
+        font-size: 12px;
+        width: 52px;
+    }
+
+    #weight2 {
+        padding: 8px;
+        font-size: 12px;
+        width: 52px;
+    }
+
+    #add-button {
+        width: 60px;
+        height: 28px;
+        padding: 2px 20px;
+        font-size: 12px;
+    }
+
+    input[type="text"], input[type="number"], select, textarea {
+        padding: 7px;
+        font-size: 12px;
+    }
+
+    #expense_amount {
+        width: 334px;
+    }
+
+    #expense_description {
+        width: 330px;
+    }
+
+    #expense_category_id {
+        width: 345px;
+    }
+
+    .submit-expenses {
+        width: 345px;
+    }
+
+    #product-dropdown2 {
+        font-size: 12px;
+        width: 90px;
+        height: 33px;
+    }
+
+    #add-button2 {
+        width: 60px;
+        height: 32px;
+        padding: 2px 20px;
+        font-size: 12px;
+    }
+
+    .tab-nav-buttons button {
+        padding: 8px 5px;
+    }
+
+    .header{
+        font-size: 12px;
+        padding: 3px;
+    }
+
+    #product-dropdown {
+        width: 110px;
+        font-size: 12px;
+        height: 30px;
+        width: 104px;
+        padding: 2px;
+    }
+
+    #weight {
+        width: 120px;
+        height: 10px;
+        font-size: 12;
+    }
+
+    .right-header{
+        display: none;
+    }
+
+    .header-right .user {
+        display: none;
+    }
+
+    .cart{
+        padding: 0px;
+        position: fixed;
+        margin-bottom: 50px;
+        height: 230px;
+    }
+
+    .cart-total {
+        font-size: 18px;  
+    }
+
+    .cart-total2 {
+        font-size: 18px;  
+    }
+
+    .purchase-cart {
+        padding: 0px;
+        position: fixed;
+        margin-bottom: 50px;
+        height: 230px;
+    }
+
+    .quantity-btn{
+        display: none;
+    }
+    .quantity-btn2{
+        display: none;
+    }
+
+    .cart td {
+        padding: 4px 0px 0px 0px;
+    }
+
+    .purchase-cart td {
+        padding: 4px 0px 0px 0px;
+    }
+
+    .bottom-right {
+        display: flex;
+        flex-direction: row;
+        align-content: space-between;
+        width: 100%;
+        margin-top: 220px;
+    }
+
+    .cart th{
+        padding: 7px;
+    }
+
+    .cart .quantity-input {
+        padding: 2px 0px;
+        width: 20px;
+    }
+
+    .purchase-cart th{
+        padding: 7px;
+    }
+
+    .purchase-cart .quantity-input {
+        padding: 2px 0px;
+        width: 20px;
+    }
+
+    .cart .delete-btn {
+        padding: 4px 6px;
+        font-size: 12px;
+    }
+
+    .purchase-cart .delete-btn2 {
+        padding: 4px 6px;
+        font-size: 12px;
+    }
+
+    .process-payment button {
+        padding: 16px;
+        font-size: 12px;
+        margin-top: 13px;
+        margin-left: 2px;
+    }
+
+    .cart-info {
+        background-color: #f1f1f1;
+        padding: 0px;
+        border-radius: 5px;
+        height: 46px;
+        margin: 13px 2px;
+    }
+
+    .container {
+        height: calc(100% - 49px);
+    }
+
+    .logout button {
+        display: none;
+        padding: 5px 10px;
+        font-size: 11px;
+        margin-left: 5px;
+    }
+
+    .pos-name {
+        display: none;
+    }
+    
+    .tab-nav-buttons button {
+        font-size: 10px;
+    }
+
+    label {
+        display: none;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .header-left {
+        display: flex;
+        align-items:flex-start
+    }
+
+    /*--- Modal Adjustments ---*/
+    
+    .numpad{
+        display: none;
+    }
+    
+    .modal-content {
+        width: 300px;
+    }
+    
+    .modal-content h2 {
+        font-size: 12px;
+    }
+    
+    .modal-content p, span {
+        font-size: large;
+    }
+    
+    .modal-content input {
+        font-size: 14px;
+    }
+    
+    .modal-content button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .alert-content p{
+        font-size: 14px;
+        font-weight: lighter;
+    }
+    
+    .alert-content button {
+        font-size: 14px;
+    }
+
+    /*--- End of Modal Adjustments ---*/
+
+}
