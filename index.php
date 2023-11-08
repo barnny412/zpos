@@ -68,60 +68,28 @@
             <div class="content">
                 <!-- All Products -->
                 <div class="products active" id="tab1">
-                    <div class="product-card">
-                        <div class="product-name">Chapamandashi Baking Powder</div>
-                        <div class="product-price">K8.00</div>
-                    </div> 
+                    
                 </div>
                 <!-- Drinks -->
                 <div class="products" id="tab2">
-                    <div class="product-card">
-                        <div class="product-name">Coca Cola 500mls</div>
-                        <div class="product-price">$13.00</div>
-                    </div>
+                    
                 </div>
                 <!-- Baked Foods -->
                 <div class="products" id="tab3">
-                    <div class="product-card">
-                        <div class="product-name">Family Bread</div>
-                        <div class="product-price">$85.00</div>
-                    </div>
+                    
                 </div>
                 <!-- Vegetables -->
                 <div class="products" id="tab4">
-                    <div class="product-card">
-                        <div class="product-name">Rape</div>
-                        <div class="product-price">$2.50</div>
-                    </div>
-                    <!-- Product 35 -->
-                    <div class="product-card">
-                        <div class="product-name">Okra</div>
-                        <div class="product-price">$5.00</div>
-                    </div>
+
+                    
                 </div>
                 <!-- All Butchery -->
                 <div class="products" id="tab5">
-                    <div class="product-card">
-                        <div class="product-name">Pork</div>
-                        <div class="product-price">$29.00</div>
-                    </div>
-                    <!-- Product 35 -->
-                    <div class="product-card">
-                        <div class="product-name">Beef</div>
-                        <div class="product-price">$13.00</div>
-                    </div>
+                    
                 </div>
                 <!-- Cigarrets -->
                 <div class="products" id="tab6">
-                    <div class="product-card">
-                        <div class="product-name">Peter</div>
-                        <div class="product-price">$1.50</div>
-                    </div>
-                    <!-- Product 35 -->
-                    <div class="product-card">
-                        <div class="product-name">Pall Mall</div>
-                        <div class="product-price">$1.00</div>
-                    </div>
+                    
                 </div>
 
             </div>
@@ -208,86 +176,27 @@
             <div class="content">
                 <!-- All Products -->
                 <div class="purchase-products active" id="purchaseTab1">
-                    <div class="purchase-product-card">
-                        <div class="product-name">Family Bread</div>
-                        <div class="packet-content">1</div>
-                        <div class="product-price">K18.00</div>
-                    </div>
-                    <div class="purchase-product-card">
-                        <div class="product-na">Parmalat Full Cream 500mls</div>
-                        <div class="packet-content">24</div>
-                        <div class="product-price">$9.99</div>
-                    </div>
-                    <div class="purchase-product-card">
-                        <div class="product-name">Chapamandashi Baking Powder</div>
-                        <div class="packet-content">48</div>
-                        <div class="product-price">$14.99</div>
-                    </div>
-                    
-                    
+                       
                 </div>
                 <!-- Drinks -->
                 <div class="purchase-products" id="purchaseTab2">
-                    <div class="purchase-product-card">
-                        <div class="product-name">Coca Cola 500mls</div>
-                        <div class="packet-content">12</div>
-                        <div class="product-price">K13.00</div>
-                    </div>
+                    
                 </div>
                 <!-- Baked Foods -->
                 <div class="purchase-products" id="purchaseTab3">
-                    <div class="purchase-product-card">
-                        <div class="product-name">Family Bread</div>
-                        <div class="packet-content">1</div>
-                        <div class="product-price">K85.00</div>
-                    </div>
+                    
                 </div>
                 <!-- Vegetables -->
                 <div class="purchase-products" id="purchaseTab4">
-                    <div class="purchase-product-card">
-                        <div class="product-name">Rape</div>
-                        <div class="packet-content">1</div>
-                        <div class="product-price">$2.50</div>
-                    </div>
-                    <!-- Product 35 -->
-                    <div class="purchase-product-card">
-                        <div class="product-name">Okra</div>
-                        <div class="packet-content">1</div>
-                        <div class="product-price">K5.00</div>
-                    </div>
+                    
                 </div>
                 <!-- All Butchery -->
                 <div class="purchase-products" id="purchaseTab5">
-                    <div class="purchase-product-card">
-                        <div class="product-name">Pork</div>
-                        <div class="packet-content">48</div>
-                        <div class="product-price">K29.00</div>
-                    </div>
-                    <!-- Product 35 -->
-                    <div class="purchase-product-card">
-                        <div class="product-name">Beef</div>
-                        <div class="packet-content">48</div>
-                        <div class="product-price">$13.00</div>
-                    </div>
+                    
                 </div>
                 <!-- Cigarrets -->
                 <div class="purchase-products" id="purchaseTab6">
-                    <div class="purchase-product-card">
-                        <div class="product-name">Pall Mall</div>
-                        <div class="packet-content">48</div>
-                        <div class="product-price">$29.00</div>
-                    </div>
-                    <!-- Product 35 -->
-                    <div class="purchase-product-card">
-                        <div class="product-name">Peter</div>
-                        <div class="packet-content">48</div>
-                        <div class="product-price">$13.00</div>
-                    </div>
-                    <div class="purchase-product-card">
-                        <div class="product-name">Safari</div>
-                        <div class="packet-content">48</div>
-                        <div class="product-price">$13.00</div>
-                    </div>
+                    
                 </div>
 
             </div>
