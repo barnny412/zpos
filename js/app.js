@@ -598,6 +598,11 @@ function processPayment() {
         // Calculate the total amount in the cart
         const cartTotal = cartItems.reduce((total, item) => total + item.total, 0);
 
+        if (cartTotal <= 0) {
+            alert('Your cart is empty. Add items to your cart before processing the payment.');
+            return;
+        }
+
         // Show the custom cash input modal
         const cashInputModal = document.getElementById('cash-input-modal');
         cashInputModal.style.display = 'flex';
@@ -801,6 +806,11 @@ savePurchaseButton.addEventListener('click', () => {
 
     // Calculate the total amount in the cart
     const cartTotal2 = cartItems2.reduce((total, item) => total + item.total, 0);
+
+    if (cartTotal2 <= 0) {
+        alert('Your cart is empty. Add items to your cart before processing the Purchases.');
+        return;
+    }
 
     // Define the customerID and userID based on your application logic
     const supplierID = 1; // Replace with the actual customer's ID
