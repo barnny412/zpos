@@ -88,6 +88,75 @@ body {
     background-color: #ff4040;
 }
 
+#menu {
+    position: fixed;
+    top: 50px;
+    left: -280px; /* Adjust this value to control the initial position */
+    width: 280px;
+    height: 100%;
+    background: linear-gradient(to bottom right, #0f0e20, #1b0e2e);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s;
+    z-index: 2;
+}
+
+#menu.open {
+    top: 59px;
+    left: 0;
+}
+
+#menu-toggle {
+    cursor: pointer;
+}
+
+#menu-toggle:hover {
+    color: #0073e6; /* Change color on hover */
+}
+
+#menu-overlay {
+    display: none;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    transition: left 0.3s;
+}
+
+#menu-content {
+    padding: 20px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.menu-item .icon {
+    margin-right: 10px;
+    font-size: 20px; /* Icon size */
+}
+
+.menu-item button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 16px; /* Button text size */
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.menu-item button:hover {
+    color: #0073e6; /* Change text color on hover */
+}
+
+.menu-header{
+    color: #ffffff;
+}
+
 .container {
     display: none;
     height: calc(100% - 60px); /* Subtract header height (2x10px padding) */
@@ -1561,11 +1630,11 @@ h2 {
     }
 
     .products {
-        height: 320px;
+        height: 622px;
     }
 
     .purchase-products {
-        height: 320px;
+        height: 622px;
     }
 }
 

@@ -1,3 +1,13 @@
+const menu = document.getElementById('menu');
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuOverlay = document.getElementById('menu-overlay');
+
+        menuToggle.addEventListener('click', () => {
+            console.log('Toggle button clicked!');
+            menu.classList.toggle('open');
+            menuOverlay.style.display = menu.classList.contains('open') ? 'block' : 'none';
+        });
+
 const elementsWithClass = document.querySelectorAll('.purchase-product-card');
 
     elementsWithClass.forEach(function(element) {

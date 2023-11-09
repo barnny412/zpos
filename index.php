@@ -11,6 +11,7 @@
 <body>
     <header class="header">
         <div class="header-left">
+        <div id="menu-toggle">&#9776;</div>
             <div class="logo">
             </div>
             <div class="pos-name">FrontMark POS</div>
@@ -18,7 +19,7 @@
                 <button onclick="changeMainTab('mainTab1')">Sales</button>
                 <button onclick="changeMainTab('mainTab2')">Purchases</button>
                 <button onclick="changeMainTab('mainTab3')">Expenses</button>
-                <button onclick="changeMainTab('mainTab4')">Add New Product</button>
+                <button onclick="changeMainTab('mainTab3')">Expenses</button>
             </div>
         </div>
         <div class="header-right">
@@ -32,9 +33,40 @@
         </div>
     </header>
 
+    <div id="menu-overlay"></div>
+    <div id="menu">
+        <div id="menu-content">
+            <div class="menu-item">
+                <div class="menu-header"><h2>Menu</h2></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="icon">🏠</div>
+                <button onclick="changeMainTab('mainTab1')">Sales</button>
+            </div>
+            <div class="menu-item">
+                <div class="icon">🔥</div>
+                <button onclick="changeMainTab('mainTab2')">Purchases</button>
+            </div>
+            <div class="menu-item">
+                <div class="icon">📋</div>
+                <button onclick="changeMainTab('mainTab3')">Expenses</button>
+            </div>
+            <div class="menu-item">
+                <div class="icon">📚</div>
+                <button onclick="changeMainTab('mainTab3')">Expenses</button>
+            </div>
+            <div class="menu-item">
+                <div class="icon">🕒</div>
+                <button onclick="changeMainTab('mainTab5')">Cashing</button>
+            </div>
+            <!-- Add more items as needed -->
+        </div>   
+    </div>
 
     <div class="container active" id="mainTab1">
         <div class="left">
+
             <div class="search-bar">
                 <input type="text" id="search-input" placeholder="Search products or Scan Using Barcode Reader" autofocus>
             </div>
