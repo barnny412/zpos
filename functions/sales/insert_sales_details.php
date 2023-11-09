@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 // Deduct the sold quantity from QuantityInStock in the products table
                 // Multiply the sold quantity by QuantityInStock in the products table
-                $updateSql = "UPDATE Products SET QuantityInStock = QuantityInStock + (? * Quantity) WHERE ProductID = ?";
+                $updateSql = "UPDATE Products SET QuantityInStock = QuantityInStock - ?  WHERE ProductID = ?";
                 $updateStmt = $db->prepare($updateSql);
                 $updateStmt->execute([$quantity, $productID]);
                 
