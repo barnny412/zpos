@@ -151,6 +151,7 @@ body {
     font-size: 18px;
     border-radius: 5px;
     width: 150px; /* Adjust the width as needed */
+    height: 40px;
 }
 
 #product-dropdown2 {
@@ -158,6 +159,7 @@ body {
     font-size: 18px;
     border-radius: 5px;
     width: 150px; /* Adjust the width as needed */
+    height: 40px;
 }
 
 .weight-input {
@@ -170,6 +172,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 120px;
+    height: 22px;
 }
 
 #cost-price {
@@ -186,6 +189,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 135px;
+    height: 22px;
 }
 
 #add-button, #add-button2 {
@@ -1553,7 +1557,7 @@ h2 {
 /* Additional styling for full-screen viewports */
 @media (min-width: 100vw) {
     .bottom-menu {
-        height: 95px;
+        height: 108px;
     }
 
     .products {
@@ -1595,11 +1599,11 @@ h2 {
 
 @media screen and (max-width: 1280px) and (max-height: 800px) {
     .products {
-        height: 465px; /* Adjust as needed */
+        height: 445px; /* Adjust as needed */
     }
     
     .purchase-products {
-        height: 465px; /* Adjust as needed */
+        height: 445px; /* Adjust as needed */
     }
 }
 
@@ -1611,15 +1615,19 @@ h2 {
     .purchase-products {
         height: 445px; /* Adjust as needed */
     }
+
+    .left {
+        overflow-y: auto;
+        }
 }
 
 @media screen and (min-width: 1280px) and (min-height: 800px) {
     .products {
-        height: 530px; /* Adjust as needed */
+        height: 462px; /* Adjust as needed */
     }
     
     .purchase-products {
-        height: 530px; /* Adjust as needed */
+        height: 462px; /* Adjust as needed */
     }
 }
 
