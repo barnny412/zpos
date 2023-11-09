@@ -2,15 +2,12 @@
 if (isset($_POST['barcode'])) {
     $barcode = $_POST['barcode'];
 
-    // Database connection parameters
-    $dbHost = 'localhost';
-    $dbUsername = 'root';
-    $dbPassword = '';
-    $dbName = 'demo_db';
+    // Include the configuration file
+    include '../../config.php';
 
     try {
         // Connect to the database
-        $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUsername, $dbPassword);
+        $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Perform a database lookup

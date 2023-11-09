@@ -450,7 +450,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 url: 'functions/barcode/processBarcode.php',
                 data: { barcode: barcode },
                 success: function (response) {
-                    if (response !== "Barcode not found in the database.") {
+                    console.log("Response from server:", response);
+
+                    try {
                         var product = JSON.parse(response);
 
                         const productId = product.ProductID;
@@ -465,7 +467,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         // Add the product to the cart
                         addToCart(productId, productName, productPrice);
                         updateCart();
-
+                    } catch (error) {
+                        console.error("JSON parsing error:", error);
+                        // Handle the error, e.g., show an error message to the user
                     }
                     document.getElementById('search-input').value = '';
                 }
@@ -473,6 +477,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
 
 // Add Purchase Items to Cart using Barcode Scanner============================================================
 document.addEventListener('DOMContentLoaded', function () {
@@ -486,7 +491,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 url: 'functions/barcode/processBarcode2.php',
                 data: { barcode: barcode },
                 success: function (response) {
-                    if (response !== "Barcode not found in the database.") {
+                    try {
                         var product = JSON.parse(response);
 
                         const productId = product.ProductID;
@@ -501,7 +506,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         // Add the product to the cart
                         addToPurchaseCart(productId, productName, costPrice);
                         updatePurchaseCart();
-
+                    } catch (error) {
+                        console.error("JSON parsing error:", error);
+                        // Handle the error, e.g., show an error message to the user
                     }
                     document.getElementById('purchase-search-input').value = '';
                 }
